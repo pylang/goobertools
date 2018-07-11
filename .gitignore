@@ -83,7 +83,6 @@ _viz/
 # Files
 # ====
 SyncToy*
-__*
 !__init__.py
 __config.json
 start_flask.bat
