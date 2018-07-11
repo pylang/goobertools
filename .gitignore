@@ -27,7 +27,6 @@ var/
 *.egg-info/
 .installed.cfg
 *.egg
-export/
 
 
 # IPython Notebooks
@@ -41,7 +40,6 @@ _notebooks/
 docs/_build/
 docs/_static/
 docs/_templates/
-#docs/generated/
 
 
 # Testing
@@ -88,6 +86,7 @@ __*/
 SyncToy*
 __*
 !__init__.py
+config.json
 
 
 
