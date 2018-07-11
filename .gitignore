@@ -86,7 +86,7 @@ __*/
 SyncToy*
 __*
 !__init__.py
-config.json
+__config.json
 
 
 
