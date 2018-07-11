@@ -1,42 +1,16 @@
-## History
-
 This project attempts to build a suite of simple web apps.  
 
-1. `selector` randomly selects songs from a Google Sheet.
+# Quickstart
 
-
-## HowTo Run
-
-Simply run in any cmd or cmder:
+In Windows, simply run in any cmd or cmder prompt:
 
     > start_flask
 
-
-##### Details 
-
-The following commands are maintained in a not version-controlled   batch file `start_flask.bat`.
-
-[Set environments][cli] and run the following in commandline:
-
-    > cd l/_projects/<app_folder>
-    > source activate lab
-
-In Windows (cmd)
-
-    > set FLASK_APP=app.py
-    > flask run
-
-or Linux (bash)
-
-    > exp*rt FLASK_APP=app.py
-    > FLASK_APP=app.py flask run
-
-Use [`debug` mode][debug] in a development env to avoid restarting the server:
-
-    > set FLASK_ENV=development
-
+# Apps
 
 ## Selector
+
+`selector` randomly selects songs from a Google Sheet.  
 
 This app has a few main ideas:
 
@@ -58,13 +32,10 @@ DEPRECATED: the uploading files data option proved overly complex.  If uploading
 
 - data is only read as DataFrames from Google sheets; it is thereafter written and read locally as `.csv` files (e.g. `db_*` files).
 - `db_*` files are temporary, psuedo-"databases"; they are written to preserve persisted data between page loads and button presses.
+- `_viz/`: something that is lacking from many web app tutorials are pictures or visual CI of code.  This (non-versioned) folder captures the progress of this project.
 
 
-## `_viz/`
-
-Something that is lacking from many web app tutorials are pictures - visual results of code.  This folder captures the progress of this project.
-
----
+# Details
 
 ## Changelog
 
@@ -77,6 +48,31 @@ Something that is lacking from many web app tutorials are pictures - visual resu
 - `0.3.1`: data options (url), deprecate upload data option
 - `1.0.0`: from `workflowtools`, add dynamic refresh button
 - `1.0.1`: published on GitHub, new versioning
+
+## Dev Mode
+
+[Set environments][cli] and run the following in commandline:
+
+    > cd l/_projects/<app_folder>
+    > source activate lab
+
+In Windows (cmd)
+
+    > set FLASK_APP=app.py
+    > flask run
+
+or Linux (bash)
+
+    > export FLASK_APP=app.py
+    > FLASK_APP=app.py flask run
+
+Use [`debug` mode][debug] in a development env to avoid restarting the server:
+
+    > set FLASK_ENV=development
+
+
+The Windows dev commands are automated in the `start_flask.bat` file.
+
 
 ## References
 
@@ -105,3 +101,5 @@ Something that is lacking from many web app tutorials are pictures - visual resu
   [refresh]: https://stackoverflow.com/questions/28762188/how-to-create-a-refresh-button-in-flask
   [fav]:        http://flask.pocoo.org/docs/1.0/patterns/favicon/
   [deploy]:    https://medium.com/@rudder_/launching-a-flask-app-from-scratch-on-pythonanywhere-fef871171e18
+
+
