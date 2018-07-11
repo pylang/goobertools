@@ -78,7 +78,7 @@ pip-delete-this-directory.txt
 # Folders
 # =======
 __*/
-
+_viz/
 
 
 # Files
@@ -87,7 +87,7 @@ SyncToy*
 __*
 !__init__.py
 __config.json
-
+start_flask.bat
 
 
 # ====================================================
