@@ -1,5 +1,6 @@
 #!python3
 import random
+import logging
 import pathlib
 
 from flask import Flask, render_template, request
@@ -34,6 +35,7 @@ def selector():
             song = next(data)
             #print(song)
         except StopIteration:
+            app.logger.info(" End of songs.  Restarting...")
             print(" End of songs.  Restarting...")
             songs = mio.read_songs_from_file()
             mio.write_shuffled_to_file(songs)              # reset shuffled file

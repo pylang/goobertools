@@ -1,18 +1,20 @@
 """Data module."""
 import csv
 import random
+import logging
 import pathlib 
 
 from . import select_random_
 
 
 ALLOWED_EXTENSIONS = set(".txt .csv".split())
+WORKING_DIRPATH = pathlib.Path(__file__).parent
 
 
 def load_songs_from_url(url=None, df=False):
     """Return dict rows or a DataFrame; load data from a url."""
     if url is None:
-        config_filepath = pathlib.Path("~/Documents/working/p/secrets/config_goob.json").expanduser()
+        config_filepath = WORKING_DIRPATH / "__config.json"
         url = select_random_.load_google_sheet_url(config_filepath)
     
     if not df:
@@ -86,6 +88,7 @@ class IO:
         try:
             data.to_csv(filepath, index=False)
         except AttributeError:
+            logging.info(" No DataFrame detected.  Writing file to csv ...")
             print(" INFO: No DataFrame detected.  Writing file to csv ...")
             with open(filepath, "w", newline="") as f:
                 writer = csv.writer(f)

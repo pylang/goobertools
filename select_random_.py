@@ -7,6 +7,7 @@ import csv
 import json
 import random
 import urllib
+import logging
 import pathlib
 import typing as typ
 import collections as ct
@@ -32,6 +33,7 @@ def load_google_sheet_url(filepath: pathlib.Path) -> str:
     except KeyError:
         raise KeyError(" Failed to load the url from the config.")
     else:
+        logging.info(" Success! Found Google Sheet url in config.")
         print(" INFO: Success! Found Google Sheet url in config.")
         return url
 
@@ -94,6 +96,7 @@ def read_google_sheets_to_dictrows(url: str) -> dict:
 def get_data_values_w_pandas(resource: typ.Union[str, pathlib.Path]) -> str:
     """Yield head-less data from a resource (a url str or file path)."""
     if resource is None:
+        logging.info(" Loading config file...")
         print(" Loading config file...")
         config_filepath = pathlib.Path("p/secrets/config_goob.json")
         try:
@@ -107,6 +110,7 @@ def get_data_values_w_pandas(resource: typ.Union[str, pathlib.Path]) -> str:
 
 def get_data_values_no_pandas(resource: typ.Union[str, pathlib.Path]) -> str:
     """Yield head-less data data from a resource without pandas."""
+    logging.info(f" Loading a file '{resource}'...")
     print(f" Loading a file '{resource}'...")
     try:
         if resource.suffix == ".csv":
