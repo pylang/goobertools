@@ -8,7 +8,7 @@ from . import select_random_
 
 
 ALLOWED_EXTENSIONS = set(".txt .csv".split())
-WORKING_DIRPATH = pathlib.Path(__file__).parent
+WORKING_DIRPATH = pathlib.Path(__file__).resolve().parent
 
 
 def load_songs_from_url(url=None, df=False):

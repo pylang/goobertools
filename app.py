@@ -1,12 +1,7 @@
 #!python3
-import random
-import logging
-import pathlib
-
 from flask import Flask, render_template, request
 
 from . import models
-from . import select_random_
 
 
 app = Flask(__name__)
@@ -28,7 +23,6 @@ def selector():
         if input_url:
             models.write_temporary_files(url=input_url)
         
-        # Select random item
         data = mio.read_shuffled_from_file()
         header = next(data)
         try:
