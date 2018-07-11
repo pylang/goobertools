@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+
+{% block body %}
+    <h1>Random Song Selector</h1>
+    <br>
+
+    <form class="pure-form" action="{{ url_for('selector') }}" method="POST" action="/">
+        {% include "includes/data_options.html" %}
+        <br>
+        <p>Press the button to select a random song.</p>
+        <button type="select" class="btn btn-info btn-lg" value="Select">Select</button>
+    </form>
+
+    <br>
+    
+    {% if result == "done" %}
+    <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">All done!</h4>
+        <p>You have gone through all items in your file.</p>
+        <hr>
+        <p class="mb-0"><b>Press the button</b> again to start over with a reshuffled sample.</p>
+    </div>
+
+    {% elif result %}
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <!-- Header -->
+            {% for key in result %}
+                {% if not loop.index0 %}
+                    <th scope="col" style="width: 60%">{{ key }}</th>
+                {% else %}
+                    <th scope="col" >{{ key }}</th>
+                {% endif %}
+            {% endfor %}
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Rows -->
+          <tr>
+            {% for col in result.values() %}
+                <td> {{ col }} </td>
+            {% endfor %}
+          </tr>
+        </tbody>
+    </table>
+
+    <br>
+    <a href="{{ url_for('selector') }}"><button type="reset" class="btn btn-secondary btn-sm" value="REFRESH">Refresh</button></a>
+    <br>
+
+    {% endif %}
+
+    <!-- <h1>About Me</h1>
+    <p>Some words</p> -->
+
+{% endblock %}
