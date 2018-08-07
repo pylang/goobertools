@@ -31,7 +31,7 @@ DEPRECATED: the uploading files data option proved overly complex.  If uploading
 #### Notes
 
 - data is only read as DataFrames from Google sheets; it is thereafter written and read locally as `.csv` files (e.g. `db_*` files).
-- `db_*` files are temporary, psuedo-"databases"; they are written to preserve persisted data between page loads and button presses.
+- `db_*` files are temporary, psuedo-"databases"; they are written to preserve persisted data between page loads and button presses and act as a substitute to actual databases.
 - `_viz/`: something that is lacking from many web app tutorials are pictures or visual CI of code.  This (non-versioned) folder captures the progress of this project.
 
 

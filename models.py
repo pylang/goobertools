@@ -7,7 +7,6 @@ import pathlib
 from .utils import select_random as sr
 
 
-ALLOWED_EXTENSIONS = set(".txt .csv".split())
 WORKING_DIRPATH = pathlib.Path(__file__).resolve().parent
 
 
@@ -24,7 +23,7 @@ def load_songs_from_url(url=None, df=False):
     return data
 
 
-def write_temporary_files(url=None, df=True):
+def write_to_disk(url=None, df=True):
     """Write remote items to disk and shuffled items to disk."""
     songs = load_songs_from_url(url=url, df=df)
     IO().write_songs_to_file(songs)
@@ -32,7 +31,7 @@ def write_temporary_files(url=None, df=True):
 
 
 class IO:
-    """A class to handle psuedo-database io."""
+    """A class to handle pseudo-database io."""
     
     def __init__(self):
         self._dirpath = pathlib.Path(__file__).absolute().parent
@@ -71,7 +70,6 @@ class IO:
         tail = data
         self._write_csv(self._filepath_shuffled, tail, header=header)
 
-
     @staticmethod
     def _read_csv(filepath):
         """Read data from a csv."""
@@ -94,10 +92,3 @@ class IO:
                 writer = csv.writer(f)
                 writer.writerow(header)
                 writer.writerows(data)
-
-    @staticmethod
-    def _allowed_file(filename: pathlib.Path):
-        """Return True if the file has the proper extension."""
-        dot = "." in filename
-        ext = filename.suffix in ALLOWED_EXTENSIONS
-        return  dot and ext

@@ -14,14 +14,14 @@ def selector():
     result = None
     if request.method == "GET":                            # refresh page
         # Default data
-        models.write_temporary_files()
+        models.write_to_disk()
 
     if request.method == "POST":                           # press button
         # Load data
         input_url = request.form["input_url"]
 
         if input_url:
-            models.write_temporary_files(url=input_url)
+            models.write_to_disk(url=input_url)
         
         data = mio.read_shuffled_from_file()
         header = next(data)
