@@ -11,7 +11,7 @@ import nose.tools as nt
 from testfixtures import TempDirectory
 
 from ..utils import tools as ut
-from ..utils import select_random_ as sr
+from ..utils import select_random as sr
 from .test_fixtures import test_fixture_select_random as fixture
 
 

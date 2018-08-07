@@ -4,7 +4,7 @@ import random
 import logging
 import pathlib 
 
-from . import select_random_
+from .utils import select_random as sr
 
 
 ALLOWED_EXTENSIONS = set(".txt .csv".split())
@@ -15,12 +15,12 @@ def load_songs_from_url(url=None, df=False):
     """Return dict rows or a DataFrame; load data from a url."""
     if url is None:
         config_filepath = WORKING_DIRPATH / "__config.json"
-        url = select_random_.load_google_sheet_url(config_filepath)
+        url = sr.load_google_sheet_url(config_filepath)
     
     if not df:
-        data = select_random_.read_google_sheets_to_dictrows(url)
+        data = sr.read_google_sheets_to_dictrows(url)
     else:
-        data = df = select_random_.read_google_sheets(url)
+        data = df = sr.read_google_sheets(url)
     return data
 
 
