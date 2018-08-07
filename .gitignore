@@ -78,7 +78,7 @@ pip-delete-this-directory.txt
 # Folders
 # =======
 _viz/
-
+.vscode/
 
 # Files
 # ====

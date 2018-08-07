@@ -48,6 +48,7 @@ DEPRECATED: the uploading files data option proved overly complex.  If uploading
 - `0.3.1`: data options (url), deprecate upload data option
 - `1.0.0`: from `workflowtools`, add dynamic refresh button
 - `1.0.1`: published on GitHub, new versioning
+- `1.0.2`: add tests, release branch to master
 
 ## Dev Mode
 
@@ -72,6 +73,14 @@ Use [`debug` mode][debug] in a development env to avoid restarting the server:
 
 
 The Windows dev commands are automated in the `start_flask.bat` file.
+
+## Tests
+
+Just run:
+
+    > nosetests
+
+This should run unit tests and textfixtures.
 
 
 ## References
