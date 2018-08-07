@@ -1,0 +1,154 @@
+# https://github.com/github/gitignore/blob/master/Python.gitignore
+
+
+# Byte-compiled / optimized / DLL files
+# =====================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+
+
+# Packaging
+# ==========
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*.egg-info/
+.installed.cfg
+*.egg
+
+
+# IPython Notebooks
+# =================
+.ipynb_checkpoints/
+_notebooks/
+
+
+# Sphinx Documentation
+# ====================
+docs/_build/
+docs/_static/
+docs/_templates/
+
+
+# Testing
+# =======
+
+# Coverage Reports
+# ----------------
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+
+# Pip
+# ===
+
+# Installer Logs
+# --------------
+pip-log.txt
+pip-delete-this-directory.txt
+
+
+# Gitflow
+# =======
+
+# Bug
+# ---
+(cd .git*/
+
+
+# Folders
+# =======
+_viz/
+.vscode/
+
+# Files
+# ====
+SyncToy*
+!__init__.py
+__config.json
+*db_*
+
+
+# ====================================================
+
+
+# =======================
+# GitHub Desktop Defaults
+# ========================
+
+# Windows image file caches
+# -------------------------
+Thumbs.db
+ehthumbs.db
+
+# OneNote
+# -------
+*.onetoc2
+
+# Folder config file
+# ------------------
+Desktop.ini
+
+# Recycle Bin used on file shares
+# -------------------------------
+$RECYCLE.BIN/
+
+# Windows Installer files
+# -----------------------
+*.cab
+*.msi
+*.msm
+*.msp
+
+# Windows shortcuts
+# -----------------
+*.lnk
+
+
+# =========================
+# Operating System Files
+# =========================
+
+
+# OSX
+# ===
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Thumbnails
+# ----------
+._*
+
+# Files that might appear on external disk
+# ----------------------------------------
+.Spotlight-V100
+.Trashes
+
+# Directories potentially created on remote AFP share
+# ---------------------------------------------------
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk

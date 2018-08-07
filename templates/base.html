@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+        <meta name="description" content="">
+        <meta name="author" content="">
+        
+        <title>goobertools</title>
+
+        <!-- Custom Favicon -->
+        <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+
+        <!-- Bootstrap core CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css"></link>
+        
+        <!-- Custom styles for this template -->
+        <link href="static/starter-template.css" rel="stylesheet"></link>
+    </head>
+    
+    <body>
+        <main role="main" class="container">
+
+            <div class="starter-template">
+                {% block body %}{% endblock %}
+            </div>
+
+        </main>
+
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+   
+    </body>
+</html>
